@@ -60,6 +60,13 @@ If so, program new fuse values to enable debugWIRE and disable bootloader.
 
 Power cycle your board to make fuse change take effect.
 
+## Step 4, check if dwire-debug is functional
+
+In terminal, swtich to `dwdebug`'s location and run `./dwdebug device usbtiny1`. Check if ATmega328p can be connected. If so, press `Control+C` to terminate dwdebug.
+
+![check debug](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/checkdwdebug.png)
+
+
 
 
 
