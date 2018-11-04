@@ -112,6 +112,10 @@ Then you will arrive extension folder
 
 ![extension Folder](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/gotoFolderExtension.png)
 
-Go into the Arduino extension folder (```vsciot-vscode.vscode-arduino-0.2.22``` at this moment) -> "misc".
+Go into the Arduino extension folder (```vsciot-vscode.vscode-arduino-0.2.22``` at this moment) -> "misc", you will find `debuggerUsbMapping.json` and `usbmapping.json` file.
+
+![extension Folder](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/debuggerUsbMappingLocation.png)
+
+Refering to [this commit](https://github.com/DeqingSun/vscode-arduino/commit/20ce2d5822b306623c9964291b6a040c44b96962), add support of USBtinySPI and Uno into `debuggerUsbMapping.json` and `usbmapping.json`
   
 
