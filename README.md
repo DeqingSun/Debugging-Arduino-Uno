@@ -66,7 +66,25 @@ In terminal, swtich to `dwdebug`'s location and run `./dwdebug device usbtiny1`.
 
 ![check debug](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/checkdwdebug.png)
 
+## Step 5, install VScode and Arduino extension.
 
+First download VScode from <https://code.visualstudio.com/>
+
+![download VScode](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/downloadVScode.png)
+
+Enable extensions side bar.
+
+![Enable extensions](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/vscodeShowExtensions.png)
+
+Look for Arduino extension (the offical one from Microsoft, not a random person) and install it.
+
+![Install Arduino](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/vscodeInstallArduino.png)
+
+Then you install Arduino extension. 
+
+Click reload after you finish install.
+
+![reload Arduino](https://github.com/DeqingSun/Debug-Debugging-Arduino-Uno/raw/master/img/vscodeReload.png)
 
 
 
