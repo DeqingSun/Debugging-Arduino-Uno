@@ -22,7 +22,7 @@ One advantage of mini pro is the absence of serial downloader. If you are using 
 
 ## Step 1, convert Digispark to debugging probe
 
-![original fuse](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/digispark_original_fuse)
+![original fuse](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/digispark_original_fuse.png)
 
 This step requires updating firmware and fuse, so find your favourite ISP programmer. Be careful in this step as we are going to disable reset pin of Digispark. If you don't have a high-voltage programmer, you won't be able to program it anymore. 
 
@@ -33,6 +33,35 @@ Get firmware from [dwire-debug's firmware](https://github.com/dcwbrown/dwire-deb
 Double check if everything is correct.
 
 Now change the high fuse to `5D` (RSTDISBL programmed). If you did everything correctly, your Digispark should be functional now.
+
+## Step 2, prepare dwire-debug
+
+I did some improvement on dwire-debug and created a [release here](https://github.com/DeqingSun/dwire-debug/releases/tag/v0.1). 
+
+If you are using Mac, you can download binary, add execute permission with `chmod +x dwdebug`, install libusb with `brew install libusb libusb-compat `.
+
+For other OS, try to compile the source in the release. 
+
+## Step 3, reprogram fuse on ATmega328p
+
+Connect all wires and USB cable. run the following command in terminal to read fuse. If the avrdude on your computer locates in a different location, change the path accordingly.
+
+`/Users/sundeqing/Library/Arduino15/packages/arduino/tools/avrdude/6.3.0-arduino9/bin/avrdude -C/Users/sundeqing/Library/Arduino15/packages/arduino/tools/avrdude/6.3.0-arduino9/etc/avrdude.conf -patmega328p -cusbtiny`
+
+![read fuse](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/readFuse328.png)
+
+Check if the signature and fuses are read correctly. 
+
+If so, program new fuse values to enable debugWIRE and disable bootloader.
+
+`/Users/sundeqing/Library/Arduino15/packages/arduino/tools/avrdude/6.3.0-arduino9/bin/avrdude -C/Users/sundeqing/Library/Arduino15/packages/arduino/tools/avrdude/6.3.0-arduino9/etc/avrdude.conf -patmega328p -cusbtiny -U lfuse:w:0xEF:m -U hfuse:w:0x9B:m -U efuse:w:0xFD:m`
+
+![write fuse](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/writeFuse328.png)
+
+Power cycle your board to make fuse change take effect.
+
+
+
 
   
 
