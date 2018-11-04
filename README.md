@@ -86,7 +86,7 @@ Click reload after you finish install.
 
 ![reload Arduino](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/vscodeReload.png)
 
-## Step 6, Add support for CMSIS-DAP
+## Step 6, Add support for debugWIRE
 
 Quit Vscode (not close the window)
 
@@ -117,5 +117,25 @@ Go into the Arduino extension folder (```vsciot-vscode.vscode-arduino-0.2.22``` 
 ![extension Folder](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/debuggerUsbMappingLocation.png)
 
 Refering to [this commit](https://github.com/DeqingSun/vscode-arduino/commit/20ce2d5822b306623c9964291b6a040c44b96962), add support of USBtinySPI and Uno into `debuggerUsbMapping.json` and `usbmapping.json`
-  
 
+## Step 7, load Blink Example
+
+This repo contains a configured example. In VScode, open folder [BlinkUno](https://github.com/DeqingSun/Debugging-Arduino-Uno/tree/master/BlinkUno) in this repo.
+
+Add breakpoints and you can start debugging the code. 
+
+![debug blink](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/debugBlink.png)
+
+## Step 8, disable debugWIRE and leave target for normal use
+
+Exit any debugging session.
+
+In terminal, swtich to `dwdebug`'s location and run `./dwdebug device usbtiny1`. Type `qi` to quit debugWIRE
+
+![quit debugwire](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/quitDebugWire.png)
+
+Then program fuse back with `/Users/sundeqing/Library/Arduino15/packages/arduino/tools/avrdude/6.3.0-arduino9/bin/avrdude -C/Users/sundeqing/Library/Arduino15/packages/arduino/tools/avrdude/6.3.0-arduino9/etc/avrdude.conf -patmega328p -cusbtiny -U lfuse:w:0xFF:m -U hfuse:w:0xDA:m -U efuse:w:0xFD:m`
+
+![set fuse back](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/setFuseBack.png)
+
+Then you can burn bootloader back and reuse the board as before.
