@@ -84,9 +84,34 @@ Then you install Arduino extension.
 
 Click reload after you finish install.
 
-![reload Arduino](https://github.com/DeqingSun/Debug-Debugging-Arduino-Uno/raw/master/img/vscodeReload.png)
+![reload Arduino](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/vscodeReload.png)
 
+## Step 6, Add support for CMSIS-DAP
 
+Quit Vscode (not close the window)
 
+![reload Arduino](https://github.com/DeqingSun/Debug-Debugging-Arduino-Uno/raw/master/img/vscodeQuit.png)
+
+In Mac, open finder, Click "Go"->"Go to Folder"
+
+![gotoFolder](https://github.com/DeqingSun/Debug-Debugging-Arduino-Uno/raw/master/img/gotoFolder.png)
+
+Open extension folder (you can copy & paste):
+
+| OS | Path |
+|----|------|
+| Windows | %USERPROFILE%\.vscode\extensions |
+| macOS   | ~/.vscode/extensions |
+| Linux   | ~/.vscode/extensions |
+
+Paste path
+
+![gotoFolder](https://github.com/DeqingSun/Debug-Debugging-Arduino-Uno/raw/master/img/gotoFolderPath.png)
+
+Then you will arrive extension folder
+
+![extension Folder](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/gotoFolderExtension.png)
+
+Go into the Arduino extension folder (```vsciot-vscode.vscode-arduino-0.2.22``` at this moment) -> "misc".
   
 
