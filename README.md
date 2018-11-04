@@ -90,11 +90,11 @@ Click reload after you finish install.
 
 Quit Vscode (not close the window)
 
-![reload Arduino](https://github.com/DeqingSun/Debug-Debugging-Arduino-Uno/raw/master/img/vscodeQuit.png)
+![reload Arduino](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/vscodeQuit.png)
 
 In Mac, open finder, Click "Go"->"Go to Folder"
 
-![gotoFolder](https://github.com/DeqingSun/Debug-Debugging-Arduino-Uno/raw/master/img/gotoFolder.png)
+![gotoFolder](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/gotoFolder.png)
 
 Open extension folder (you can copy & paste):
 
@@ -106,7 +106,7 @@ Open extension folder (you can copy & paste):
 
 Paste path
 
-![gotoFolder](https://github.com/DeqingSun/Debug-Debugging-Arduino-Uno/raw/master/img/gotoFolderPath.png)
+![gotoFolder](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/gotoFolderPath.png)
 
 Then you will arrive extension folder
 
