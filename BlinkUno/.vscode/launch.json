@@ -1,0 +1,47 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Arduino",
+            "type": "arduino",
+            "request": "launch",
+            "program": "${file}",
+            "cwd": "${workspaceFolder}",
+            "targetArchitecture": "arm",    //pretend it is arm or it won't work
+            "MIMode": "gdb",
+            "miDebuggerPath": "/Users/sundeqing/Library/Arduino15/packages/arduino/tools/avr-gcc/4.9.2-atmel3.5.4-arduino2/bin/avr-gdb",
+            "debugServerPath": "/Users/sundeqing/Documents/Github/dwire-debug/dwdebug",
+            "debugServerArgs": "verbose,gdbserver,device usbtiny1",
+            //"debugServerPath": "/Users/sundeqing/Downloads/gnu-mcu-eclipse/openocd/0.10.0-10-20181020-0522/bin/openocd",
+            //"debugServerArgs": " -f /Users/sundeqing/Downloads/gnu-mcu-eclipse/openocd/0.10.0-10-20181020-0522/scripts/interface/dummy.cfg -f /Users/sundeqing/Downloads/gnu-mcu-eclipse/openocd/0.10.0-10-20181020-0522/scripts/target/faux.cfg ",
+            "customLaunchSetupCommands": [
+                {
+                    "text": "target remote localhost:4444"
+                },
+                {
+                    "text": "file \"${file}\""
+                },
+                {
+                    "text": "load"
+                },
+                {
+                    "text": "monitor reset halt",
+                    "ignoreFailures": true
+                },
+                {
+                    "text": "monitor reset init",
+                    "ignoreFailures": true
+                }
+            ],
+            "stopAtEntry": true,
+            "serverStarted": "Info\\ :\\ [\\w\\d\\.]*:\\ hardware",
+            "launchCompleteCommand": "exec-continue",
+            "filterStderr": true,
+            "args": [],
+            "logging": { "trace": true, "traceResponse": true, "engineLogging": true }
+        }
+    ]
+}
