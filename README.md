@@ -122,6 +122,8 @@ Refering to [this commit](https://github.com/DeqingSun/vscode-arduino/commit/20c
 
 This repo contains a configured example. In VScode, open folder [BlinkUno](https://github.com/DeqingSun/Debugging-Arduino-Uno/tree/master/BlinkUno) in this repo.
 
+Change `miDebuggerPath` and `debugServerPath ` launch.json. Make sure they are pointing to the correct files.
+
 Add breakpoints and you can start debugging the code. 
 
 ![debug blink](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/debugBlink.png)
