@@ -22,6 +22,10 @@ One advantage of mini pro is the absence of serial downloader. If you are using 
 
 ## Step 1, convert Digispark to debugging probe
 
+Choose one method below.
+
+### without bootloader
+
 ![original fuse](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/digispark_original_fuse.png)
 
 This step requires updating firmware and fuse, so find your favourite ISP programmer. Be careful in this step as we are going to disable reset pin of Digispark. If you don't have a high-voltage programmer, you won't be able to program it anymore. 
@@ -33,6 +37,24 @@ Get firmware from [dwire-debug's firmware](https://github.com/dcwbrown/dwire-deb
 Double check if everything is correct.
 
 Now change the high fuse to `5D` (RSTDISBL programmed). If you did everything correctly, your Digispark should be functional now.
+
+### with bootloader
+
+With a bootloader, you don't need a high voltage programmer to update the firmware. However, if your bootloader got damaged or you want to change the fuse, you still need a high voltage programmer.
+
+I used [micronucleus bootloader](https://github.com/micronucleus/micronucleus). You can get the hex file from [here](https://github.com/micronucleus/micronucleus/blob/master/firmware/releases/t85_default.hex).
+
+Before programming bootloader, use ISP programmer to set fuses correctly. I used `C1 DD FE` fuses. Make sure you checked SELFPRGEN.
+
+![bootloader fuse](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/fuseForMicronucleus.png)
+
+Then you use the command-line tool in micronucleus's repo to upload the [dwire-debug's firmware](https://github.com/dcwbrown/dwire-debug/blob/master/usbtiny/main.hex).
+
+If you do it correctly, everytime you plug in the ATtiny85 board, it will appear as a Vendor-Specific Device with PID:0x0753 & VID:0x16d0. If you don't upload firmware, it will automatically become USBtinySPI with PID:0x0c9f & VID:0x1781 after 6 seconds.
+
+After you confirm your bootloader is working, set fuse RSTDISBL with the ISP programmer.  
+
+![bootloader fuse](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/fuseForMicronucleusRSTDISBL.png)
 
 ## Step 2, prepare dwire-debug
 
