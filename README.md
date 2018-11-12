@@ -152,6 +152,10 @@ Add breakpoints and you can start debugging the code.
 
 ![debug blink](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/debugBlink.png)
 
+Also tested on windows.
+
+![debug blink](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/debugBlinkWindows.png)
+
 If debug server can not start, it may be caused by exiting debug while code is running. Kill running dwdebug will fix it. 
 
 ## Step 8, disable debugWIRE and leave target for normal use
