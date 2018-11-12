@@ -64,6 +64,8 @@ I did some improvement on dwire-debug and created a [release here](https://githu
 
 If you are using Mac, you can download binary, add execute permission with `chmod +x dwdebug`, install libusb with `brew install libusb libusb-compat `.
 
+If you are using Windows, you need to use libusb-win32 driver for ATtiny85. Refer to [Readme](https://github.com/dcwbrown/dwire-debug#digisparklittlewire-hardware-with-extended-usbtinyspi-firmware) of dwire-debug repo for more info.​
+
 For other OS, try to compile the source in the release. 
 
 ## Step 3, reprogram fuse on ATmega328p
