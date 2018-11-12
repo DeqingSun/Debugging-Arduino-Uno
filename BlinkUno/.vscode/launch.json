@@ -11,12 +11,14 @@
             "program": "${file}",
             "cwd": "${workspaceFolder}",
             "targetArchitecture": "arm",    //pretend it is arm or it won't work
-            "MIMode": "gdb",
-            "miDebuggerPath": "/Users/sundeqing/Library/Arduino15/packages/arduino/tools/avr-gcc/4.9.2-atmel3.5.4-arduino2/bin/avr-gdb",
-            "debugServerPath": "/Users/sundeqing/Documents/Github/dwire-debug/dwdebug",
+            "miDebuggerPath": "C:\\Program Files (x86)\\Arduino\\hardware\\tools\\avr\\bin\\avr-gdb.exe", 
+            "debugServerPath": "Z:\\Github\\dwire-debug\\dwdebug.exe",
             "debugServerArgs": "verbose,gdbserver,device usbtiny1",
-            //"debugServerPath": "/Users/sundeqing/Downloads/gnu-mcu-eclipse/openocd/0.10.0-10-20181020-0522/bin/openocd",
-            //"debugServerArgs": " -f /Users/sundeqing/Downloads/gnu-mcu-eclipse/openocd/0.10.0-10-20181020-0522/scripts/interface/dummy.cfg -f /Users/sundeqing/Downloads/gnu-mcu-eclipse/openocd/0.10.0-10-20181020-0522/scripts/target/faux.cfg ",
+            "MIMode": "gdb",  
+            "osx": {
+                "miDebuggerPath": "/Users/sundeqing/Library/Arduino15/packages/arduino/tools/avr-gcc/4.9.2-atmel3.5.4-arduino2/bin/avr-gdb",
+                "debugServerPath": "/Users/sundeqing/Documents/Github/dwire-debug/dwdebug",
+            },
             "customLaunchSetupCommands": [
                 {
                     "text": "target remote localhost:4444"
