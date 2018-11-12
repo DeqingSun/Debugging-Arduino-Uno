@@ -12,6 +12,8 @@ On computer side, Visual Studio Code is capable to debug ARM based Arduino, here
 
 The dwire project can use an FT232 or CH340 as debugging probe. However, debugWIRE may require changing fuses occasionally. So I used an Attiny85 both as ISP programmer and debugger.
 
+Note: At Nov 12 2018, the [PR](https://github.com/dcwbrown/dwire-debug/pull/42) hasn't been merged into master, optimized firmware and debug server can be found in [this branch](https://github.com/DeqingSun/dwire-debug/tree/cherryPick_speedupreading).
+
 ## Hardware I used
 
 ![schematic](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/tiny_minipro_bb.png)
@@ -149,6 +151,8 @@ Change `miDebuggerPath` and `debugServerPath ` launch.json. Make sure they are p
 Add breakpoints and you can start debugging the code. 
 
 ![debug blink](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/debugBlink.png)
+
+If debug server can not start, it may be caused by exiting debug while code is running. Kill running dwdebug will fix it. 
 
 ## Step 8, disable debugWIRE and leave target for normal use
 

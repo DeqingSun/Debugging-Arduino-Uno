@@ -1,3 +1,5 @@
+#include <Arduino.h>
+
 volatile unsigned char a;
 void setup() {
   pinMode(LED_BUILTIN, OUTPUT);
