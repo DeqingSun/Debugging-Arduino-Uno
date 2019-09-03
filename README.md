@@ -34,7 +34,7 @@ This step requires updating firmware and fuse, so find your favourite ISP progra
 
 My Digispark comes with `E1 DD FF` fuses. You should check if yours has the same fuse (unless you know how fuses work).
 
-Get firmware from [dwire-debug's firmware](https://github.com/dcwbrown/dwire-debug/blob/master/usbtiny/main.hex), erase your attiny85, program and verify firmware.
+Get firmware from [dwire-debug's firmware](https://github.com/DeqingSun/dwire-debug/blob/master/usbtiny/main.hex), erase your attiny85, program and verify firmware.
 
 Double check if everything is correct.
 
@@ -50,7 +50,7 @@ Before programming bootloader, use ISP programmer to set fuses correctly. I used
 
 ![bootloader fuse](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/fuseForMicronucleus.png)
 
-Then you use the command-line tool in micronucleus's repo to upload the [dwire-debug's firmware](https://github.com/dcwbrown/dwire-debug/blob/master/usbtiny/main.hex).
+Then you use the command-line tool in micronucleus's repo to upload the [dwire-debug's firmware](https://github.com/DeqingSun/dwire-debug/blob/master/usbtiny/main.hex).
 
 If you do it correctly, everytime you plug in the ATtiny85 board, it will appear as a Vendor-Specific Device with PID:0x0753 & VID:0x16d0. If you don't upload firmware, it will automatically become USBtinySPI with PID:0x0c9f & VID:0x1781 after 6 seconds.
 
@@ -112,7 +112,7 @@ Click reload after you finish install.
 
 ![reload Arduino](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/vscodeReload.png)
 
-## Step 6, Add support for debugWIRE
+## ~~Step 6, Add support for debugWIRE~~ No longer needed after [This PR has been merged](https://github.com/microsoft/vscode-arduino/pull/685)
 
 Quit Vscode (not close the window)
 
