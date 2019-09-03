@@ -16,7 +16,7 @@
             "debugServerArgs": "verbose,gdbserver,device usbtiny1",
             "MIMode": "gdb",  
             "osx": {
-                "miDebuggerPath": "/Users/sundeqing/Library/Arduino15/packages/arduino/tools/avr-gcc/4.9.2-atmel3.5.4-arduino2/bin/avr-gdb",
+                "miDebuggerPath": "/Applications/Arduino.app/Contents/Java/hardware/tools/avr/bin/avr-gdb",
                 "debugServerPath": "/Users/sundeqing/Documents/Github/dwire-debug/dwdebug",
             },
             "customLaunchSetupCommands": [
