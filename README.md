@@ -72,7 +72,7 @@ For other OS, try to compile the source in the release.
 
 Connect all wires and USB cable. run the following command in terminal to read fuse. If the avrdude on your computer locates in a different location, change the path accordingly.
 
-`/Users/sundeqing/Library/Arduino15/packages/arduino/tools/avrdude/6.3.0-arduino9/bin/avrdude -C/Users/sundeqing/Library/Arduino15/packages/arduino/tools/avrdude/6.3.0-arduino9/etc/avrdude.conf -patmega328p -cusbtiny`
+`avrdude -patmega328p -cusbtiny`
 
 ![read fuse](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/readFuse328.png)
 
@@ -80,7 +80,7 @@ Check if the signature and fuses are read correctly.
 
 If so, program new fuse values to enable debugWIRE and disable bootloader.
 
-`/Users/sundeqing/Library/Arduino15/packages/arduino/tools/avrdude/6.3.0-arduino9/bin/avrdude -C/Users/sundeqing/Library/Arduino15/packages/arduino/tools/avrdude/6.3.0-arduino9/etc/avrdude.conf -patmega328p -cusbtiny -U lfuse:w:0xEF:m -U hfuse:w:0x9B:m -U efuse:w:0xFD:m`
+`avrdude -patmega328p -cusbtiny -U lfuse:w:0xEF:m -U hfuse:w:0x9B:m -U efuse:w:0xFD:m`
 
 ![write fuse](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/writeFuse328.png)
 
@@ -112,39 +112,7 @@ Click reload after you finish install.
 
 ![reload Arduino](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/vscodeReload.png)
 
-## ~~Step 6, Add support for debugWIRE~~ No longer needed after [This PR has been merged](https://github.com/microsoft/vscode-arduino/pull/685)
-
-Quit Vscode (not close the window)
-
-![reload Arduino](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/vscodeQuit.png)
-
-In Mac, open finder, Click "Go"->"Go to Folder"
-
-![gotoFolder](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/gotoFolder.png)
-
-Open extension folder (you can copy & paste):
-
-| OS | Path |
-|----|------|
-| Windows | %USERPROFILE%\.vscode\extensions |
-| macOS   | ~/.vscode/extensions |
-| Linux   | ~/.vscode/extensions |
-
-Paste path
-
-![gotoFolder](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/gotoFolderPath.png)
-
-Then you will arrive extension folder
-
-![extension Folder](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/gotoFolderExtension.png)
-
-Go into the Arduino extension folder (```vsciot-vscode.vscode-arduino-0.2.22``` at this moment) -> "misc", you will find `debuggerUsbMapping.json` and `usbmapping.json` file.
-
-![extension Folder](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/debuggerUsbMappingLocation.png)
-
-Refering to [this commit](https://github.com/DeqingSun/vscode-arduino/commit/20ce2d5822b306623c9964291b6a040c44b96962), add support of USBtinySPI and Uno into `debuggerUsbMapping.json` and `usbmapping.json`
-
-## Step 7, load Blink Example
+## Step 6, load Blink Example
 
 This repo contains a configured example. In VScode, open folder [BlinkUno](https://github.com/DeqingSun/Debugging-Arduino-Uno/tree/master/BlinkUno) in this repo.
 
@@ -160,7 +128,7 @@ Also tested on windows.
 
 If debug server can not start, it may be caused by exiting debug while code is running. Kill running dwdebug will fix it. 
 
-## Step 8, disable debugWIRE and leave target for normal use
+## Step 7, disable debugWIRE and leave target for normal use
 
 Exit any debugging session.
 
@@ -168,7 +136,7 @@ In terminal, swtich to `dwdebug`'s location and run `./dwdebug device usbtiny1`.
 
 ![quit debugwire](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/quitDebugWire.png)
 
-Then program fuse back with `/Users/sundeqing/Library/Arduino15/packages/arduino/tools/avrdude/6.3.0-arduino9/bin/avrdude -C/Users/sundeqing/Library/Arduino15/packages/arduino/tools/avrdude/6.3.0-arduino9/etc/avrdude.conf -patmega328p -cusbtiny -U lfuse:w:0xFF:m -U hfuse:w:0xDA:m -U efuse:w:0xFD:m`
+Then program fuse back with `avrdude -patmega328p -cusbtiny -U lfuse:w:0xFF:m -U hfuse:w:0xDA:m -U efuse:w:0xFD:m`
 
 ![set fuse back](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/setFuseBack.png)
 
