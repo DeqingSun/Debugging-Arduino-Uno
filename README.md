@@ -48,6 +48,8 @@ I used [micronucleus bootloader](https://github.com/micronucleus/micronucleus). 
 
 Before programming bootloader, use ISP programmer to set fuses correctly. I used `C1 DD FE` fuses. Make sure you checked SELFPRGEN.
 
+For avrdude, you may use `avrdude -c usbtiny -p t85 -U flash:w:t85_default.hex -U lfuse:w:0xc1:m -U hfuse:w:0xdd:m -U efuse:w:0xfe:m`
+
 ![bootloader fuse](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/fuseForMicronucleus.png)
 
 Then you use the command-line tool in micronucleus's repo to upload the [dwire-debug's firmware](https://github.com/DeqingSun/dwire-debug/blob/master/usbtiny/main.hex).
@@ -57,6 +59,8 @@ If you do it correctly, everytime you plug in the ATtiny85 board, it will appear
 After you confirm your bootloader is working, set fuse RSTDISBL with the ISP programmer.  
 
 ![bootloader fuse](https://github.com/DeqingSun/Debugging-Arduino-Uno/raw/master/img/fuseForMicronucleusRSTDISBL.png)
+
+For avrdude, you may use `avrdude -c usbtiny -p t85 -U hfuse:w:0x5d:m`
 
 ## Step 2, prepare dwire-debug
 
