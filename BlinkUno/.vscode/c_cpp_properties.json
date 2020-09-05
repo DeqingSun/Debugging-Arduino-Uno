@@ -6,11 +6,13 @@
                 "/Users/sundeqing/Library/Arduino15/packages/arduino/tools/**",
                 "/Users/sundeqing/Library/Arduino15/packages/arduino/hardware/avr/1.6.21/**",
                 "/Applications/Arduino.app/Contents/Java/hardware/arduino/avr/**",
-                "/Applications/Arduino.app/Contents/Java/tools/**"
+                "/Applications/Arduino.app/Contents/Java/tools/**",
+                "/Users/sundeqing/Library/Arduino15/packages/arduino/hardware/avr/1.8.2/**"
             ],
             "forcedInclude": [
                 "/Users/sundeqing/Library/Arduino15/packages/arduino/hardware/avr/1.6.21/cores/arduino/Arduino.h",
-                "/Applications/Arduino.app/Contents/Java/hardware/arduino/avr/cores/arduino/Arduino.h"
+                "/Applications/Arduino.app/Contents/Java/hardware/arduino/avr/cores/arduino/Arduino.h",
+                "/Users/sundeqing/Library/Arduino15/packages/arduino/hardware/avr/1.8.2/cores/arduino/Arduino.h"
             ],
             "macFrameworkPath": [
                 "/System/Library/Frameworks",
